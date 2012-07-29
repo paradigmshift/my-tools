@@ -1,0 +1,7 @@
+-*- mode: org -*_
+#+STARTUP: showeverything
+* CHANGES
+** initial commit
+
+* TODO
+- [ ] fill out README, create DOCS file
