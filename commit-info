@@ -1,7 +1,8 @@
--*- mode: org -*_
+-*- mode: org -*-
 #+STARTUP: showeverything
 * CHANGES
-** initial commit
+** changed README to markdown format from .txt 
 
 * TODO
-- [ ] fill out README, create DOCS file
+- [X] fill out README, create DOCS file
+- [ ] rewrite permute function to accept arrays
