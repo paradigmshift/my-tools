@@ -1,3 +1,4 @@
+
 ;;;; my-tools.lisp
 
 (in-package #:my-tools)
@@ -41,3 +42,11 @@
            (aref new-array y) (aref new-array x))
     new-array))
 
+(defun list-factors (i)
+  (let ((factors '()))
+    (labels ((factor-calc (x y)
+			  (cond ((> y x) factors)
+				((equal (mod x y) 0) (progn (push y factors)
+							    (factor-calc (/ x y) y)))
+				(t (factor-calc x (1+ y))))))
+      (factor-calc i 2))))
