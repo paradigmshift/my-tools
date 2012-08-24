@@ -1,8 +1,8 @@
 -*- mode: org -*-
 #+STARTUP: showeverything
 * CHANGES
-** changed README to markdown format from .txt 
+** list-factor test fixed
 
 * TODO
-- [X] fill out README, create DOCS file
 - [ ] rewrite permute function to accept arrays
+- [X] fix 'list-factors test
