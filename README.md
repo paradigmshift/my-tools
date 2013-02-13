@@ -24,9 +24,10 @@ If for some reason you prefer not to use Quicklisp, you can still load the files
 
 ### Exported functions
 
-`list-switch` - switches elements at defined positions with each other
-`array-switch` - same as list-switch but for arrays
-`permute` - returns a list of all possible permutations of a passed list
+`l-swap` - switches elements at defined positions with each other
+`a-swap` - same as list-switch but for arrays
+`permutations` - returns a list of all possible permutations of a passed list
+`p-factors` - lists prime factors
 
 Comments, Criticisms, Extensions, etc are very welcome.
 
