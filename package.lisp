@@ -2,10 +2,10 @@
 
 (defpackage #:my-tools
   (:use #:cl)
-  (:export #:permute
-           #:array-switch
-           #:list-switch
-           #:list-factors))
+  (:export #:permutations
+           #:a-swap
+           #:l-swap
+           #:p-factors))
 
 (defpackage #:my-tools-tests
   (:use #:cl #:lisp-unit #:my-tools))

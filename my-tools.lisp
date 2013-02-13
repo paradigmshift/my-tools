@@ -5,48 +5,37 @@
 
 ;;; "my-tools" goes here. Hacks and glory await!
 
-(defun list-switch (a b lst)
-  "Switch elements at position a & b with each other"
+(defun l-swap (a b lst)
+  "Switch list elements at position a & b with each other"
   (let ((newlst (copy-list lst)))
     (psetf (nth a newlst) (nth b newlst)
            (nth b newlst) (nth a newlst))
     newlst))
 
-(defun permute (lst)
-  ;; reduces the results from start-algo function
-  (let ((final nil))
-    (mapcar (lambda (x)
-              (if (= (length x) (length lst))
-                  (push x final)))
-            (start-algo lst))
-    final))
-
-(defun start-algo (lst)  
-  (let ((container nil))
-    (push (list (car lst) (cadr lst)) container)
-    (push (list-switch 0 1 (car container)) container)
-    (setf lst (cddr lst))
-    (dotimes (n (length lst))
-      (mapcar (lambda (x)
-                (setf x (push (car lst) x))
-                (push x container)
-                (dotimes (i (1- (length x)))
-                  (push (list-switch i (1+ i) (car container)) container)))
-              container)
-      (setf lst (cdr lst)))
-    container))
-
-(defun array-switch (x y array)
+(defun a-swap (x y array)
+  "Switch array elements at position a & b with each other"
   (let ((new-array (copy-seq array)))
     (psetf (aref new-array x) (aref new-array y)
            (aref new-array y) (aref new-array x))
     new-array))
 
-(defun list-factors (i)
+(defun p-factors (i)
+  "List prime factors of i"
   (let ((factors '()))
     (labels ((factor-calc (x y)
-			  (cond ((> y x) factors)
+			  (cond ((> (/ y 2) x) factors)
 				((equal (mod x y) 0) (progn (push y factors)
 							    (factor-calc (/ x y) y)))
 				(t (factor-calc x (1+ y))))))
       (factor-calc i 2))))
+
+(defun permutations (bag)
+  "Return a list of all the permutations of the input."
+  (declare (type sequence bag))
+  (if (null bag) 
+      '(())
+      (mapcan #'(lambda (e)
+		  (mapcar #'(lambda (p) (cons e p))
+			  (permutations
+			   (remove e bag :count 1))))
+	      bag)))
