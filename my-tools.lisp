@@ -19,6 +19,16 @@
            (aref new-array y) (aref new-array x))
     new-array))
 
+(defun insert (str document pos)
+  "Insert str into a specific position in document"
+  (when (> pos (length document))
+    (error 'index-out-of-bounds :text pos))
+  (if (< (1+ pos) (length document))
+      (let ((half1 (subseq document 0 (1+ pos)))
+            (half2 (subseq document (1+ pos))))
+        (concatenate 'string half1 str half2))
+      (concatenate 'string document str)))
+
 (defun p-factors (i)
   "List prime factors of i"
   (let ((factors '()))
@@ -39,3 +49,6 @@
 			  (permutations
 			   (remove e bag :count 1))))
 	      bag)))
+
+(define-condition index-out-of-bounds (error)
+  ((text :initarg :text :reader text)))

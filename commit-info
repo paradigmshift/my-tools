@@ -1,8 +1,7 @@
 -*- mode: org -*-
 #+STARTUP: showeverything
 * CHANGES
-** renamed functions in my-tools.lisp and my-tools-tests.lisp
-** refactored permutation algorithm
+** insert function and test
 
 * TODO
 - [ ] rewrite permute function to accept arrays

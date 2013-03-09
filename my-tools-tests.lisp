@@ -12,4 +12,8 @@
 (define-test p-factors
   (assert-equal 13195 (reduce #'* (p-factors 13195)))
   (assert-equal '(5 2 2) (p-factors 20)))
+
+(define-test insert
+  (assert-equalp "hello</br> there" (insert "</br>" "hello there" 4))
+  (assert-equalp "hello there</br>" (insert "</br>" "hello there" 11)))
   

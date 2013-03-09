@@ -5,6 +5,7 @@
   (:export #:permutations
            #:a-swap
            #:l-swap
+           #:insert
            #:p-factors))
 
 (defpackage #:my-tools-tests
