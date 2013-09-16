@@ -3,10 +3,12 @@
 (defpackage #:my-tools
   (:use #:cl)
   (:export #:permutations
-           #:a-swap
-           #:l-swap
            #:insert
-           #:p-factors))
+           #:p-factors
+           #:slurpfile
+           #:slurp-to-string
+           #:split
+           #:match))
 
 (defpackage #:my-tools-tests
   (:use #:cl #:lisp-unit #:my-tools))

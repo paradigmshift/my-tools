@@ -1,7 +1,6 @@
--*- mode: org -*-
-#+STARTUP: showeverything
-* CHANGES
-** insert function and test
+Added pattern-matching.
 
-* TODO
-- [ ] rewrite permute function to accept arrays
+Added slurpfile functions.
+
+TODO
+[ ] rewrite permute function to accept arrays

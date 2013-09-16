@@ -16,4 +16,3 @@
 (define-test insert
   (assert-equalp "hello</br> there" (insert "</br>" "hello there" 4))
   (assert-equalp "hello there</br>" (insert "</br>" "hello there" 11)))
-  
