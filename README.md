@@ -2,7 +2,10 @@
 
 A collection of everyday common functions that I use but are not found in most Common Lisp implementations. Some functions may use SBCL specific features.
 
-As the library grows, some functions may be moved and separated into more specific packages like command-line tools, http-tools, etc.
+As the library grows, some functions may be moved and separated into
+more specific packages like command-line tools, http-tools, etc.
+
+[![endorse](https://api.coderwall.com/paradigmshift/endorsecount.png)](https://coderwall.com/paradigmshift)
 
 ### Downloading
 
